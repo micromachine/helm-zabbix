@@ -437,13 +437,19 @@ ingress:
   # -- Ingress annotations
   annotations: {}
   kubernetes.io/ingress.class: nginx
-  kubernetes.io/tls-acme: "true"
+  nginx.ingress.kubernetes.io/use-regex: "true"
+  cert-manager.io/cluster-issuer: "le-prod"
   # -- Ingress hosts
   hosts:
     - host: zabbix.nucleos.net.pl
       paths:
         - path: /
           pathType: ImplementationSpecific
+
+  ##
+  ##    kubernetes.io/ingress.class: nginx
+  ##  nginx.ingress.kubernetes.io/use-regex: "true"
+  ## cert-manager.io/cluster-issuer: "letsencrypt-staging"
   # -- Ingress TLS configuration
   tls: []
   #  - secretName: chart-example-tls
@@ -451,7 +457,7 @@ ingress:
   #      - chart-example.local
   # For Kubernetes >= 1.18 you should specify the ingress-controller via the field ingressClassName
   # See https://kubernetes.io/blog/2020/04/02/improvements-to-the-ingress-api-in-kubernetes-1.18/#specifying-the-class-of-an-ingress
-  # ingressClassName: nginx
+  ingressClassName: nginx
   # -- pathType is only for k8s >= 1.1=
   pathType: Prefix
 
