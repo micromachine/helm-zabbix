@@ -433,7 +433,7 @@ zabbixwebservice:
 # Ingress configurations
 ingress:
   # -- Enables Ingress
-  enabled: false
+  enabled: true
   # -- Ingress annotations
   annotations: {}
   kubernetes.io/ingress.class: nginx
