@@ -441,7 +441,7 @@ ingress:
   cert-manager.io/cluster-issuer: "le-prod"
   # -- Ingress hosts
   hosts:
-    - host: zabbix.nucleos.net.pl
+    - host: www-zabbix.nucleos.net.pl
       paths:
         - path: /
           pathType: ImplementationSpecific
